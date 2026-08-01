@@ -15,10 +15,10 @@ public class Estudante extends AbstractEntity<Long> {
 	@Column(length = 50)
 	   private String nome;
 	
-	@Column(length = 50)
+	@Column(length = 50, unique = true)
    private String email;
 
-	
+	public Estudante() {}
 	
 	public Estudante(String nome, String email) {
 		super();

@@ -1,7 +1,6 @@
 package com.mario.se.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -17,12 +16,10 @@ public class EstudanteService {
 		this.estudanteRepository=estudanteRepository;
 	}
 	
-
 	//listar
 	public List<Estudante> listar() {
 	  return estudanteRepository.findAll();
 	}
-
 
 	//salvar ou criar
 	public Estudante salvar( Estudante estudante ) {

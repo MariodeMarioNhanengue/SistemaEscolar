@@ -2,6 +2,8 @@ package com.mario.se.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 
@@ -18,6 +20,11 @@ public class Estudante extends AbstractEntity<Long> {
 	@Column(length = 50, unique = true)
    private String email;
 
+	@ManyToOne
+	@JoinColumn(name="id_curso_fk")
+     private Curso curso;
+     
+     
 	public Estudante() {}
 	
 	public Estudante(String nome, String email) {

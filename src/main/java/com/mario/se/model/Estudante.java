@@ -1,5 +1,7 @@
 package com.mario.se.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -14,6 +16,7 @@ public class Estudante extends AbstractEntity<Long> {
 
 	
 	
+
 	@Column(length = 50)
 	   private String nome;
 	
@@ -21,8 +24,9 @@ public class Estudante extends AbstractEntity<Long> {
    private String email;
 
 	@ManyToOne
-	@JoinColumn(name="id_curso_fk")
-     private Curso curso;
+	@JoinColumn(name = "id_curso_fk")
+	@JsonIgnoreProperties("estudante")
+	private Curso curso;
      
      
 	public Estudante() {}
@@ -50,7 +54,14 @@ public class Estudante extends AbstractEntity<Long> {
 	}
 	
 	
-	
+	public Curso getCurso() {
+		return curso;
+	}
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
+
 	
    
 	

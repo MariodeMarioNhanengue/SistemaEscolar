@@ -2,6 +2,9 @@ package com.mario.se.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -16,15 +19,16 @@ public class Curso extends AbstractEntity<Long> {
 	private String nome;
 	
 	@Column(name ="carga")
-	private Integer Carga;
+	private Integer carga;
 	
-	@OneToMany(mappedBy ="curso")
+	@OneToMany(mappedBy = "curso")
+	@JsonIgnoreProperties("curso")
 	private List<Estudante> estudante;
 
 	public Curso(String nome, Integer carga, List<Estudante> estudante) {
 		super();
 		this.nome = nome;
-		Carga = carga;
+		this.carga = carga;
 		this.estudante = estudante;
 	}
 
@@ -38,10 +42,8 @@ public class Curso extends AbstractEntity<Long> {
 
 
 
-	public Curso(String nome, Integer carga) {
-		super();
-		this.nome = nome;
-		Carga = carga;
+	public Curso() {
+		
 	}
       
 	
@@ -55,11 +57,11 @@ public class Curso extends AbstractEntity<Long> {
 	}
 
 	public Integer getCarga() {
-		return Carga;
+		return carga;
 	}
 
 	public void setCarga(Integer carga) {
-		Carga = carga;
+		this.carga = carga;
 	}
 	
 	

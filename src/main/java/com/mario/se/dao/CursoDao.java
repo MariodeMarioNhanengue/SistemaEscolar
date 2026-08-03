@@ -12,4 +12,5 @@ public interface CursoDao {
 	   void delete(Long id);
 	   Curso findById(Long id);
 	   List<Curso> findAll();
+	   void saveAll(List<Curso> curso);
 }

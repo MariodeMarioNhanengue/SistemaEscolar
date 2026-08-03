@@ -30,10 +30,16 @@ public abstract class AbstractDao<T, PK extends Serializable> {
             entityManager.remove(entity);
         }
     }
+    public void saveAll(List<T> entity) {
+        for (T entities  : entity) {
+            entityManager.persist(entities);
+        }
+    }
 
     public T findById(PK id) {
         return entityManager.find(entityClass, id);
     }
+    
 
     public List<T> findAll() {
         return entityManager

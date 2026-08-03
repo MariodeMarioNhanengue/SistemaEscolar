@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.mario.se.model.Estudante;
 
 @Repository
-public class EstudanteDaoimpl extends AbstractDao<Estudante, Long> implements EstudanteDao {
+public class EstudanteDaoImpl extends AbstractDao<Estudante, Long> implements EstudanteDao {
 
 }

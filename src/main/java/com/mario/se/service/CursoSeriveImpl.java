@@ -54,6 +54,14 @@ public class CursoSeriveImpl implements CursoService {
 		return cursoDao.findAll();
 	}
 
+
+
+	@Override
+	public void salvarTodos(List<Curso> curso) {
+		cursoDao.saveAll(curso);
+		
+	}
+
 	
 
 }

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.mario.se.model.Estudante;
 
-
 @Service
 public interface EstudanteService {
 	

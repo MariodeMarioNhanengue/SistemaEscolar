@@ -21,9 +21,8 @@ public abstract class AbstractDao<T, PK extends Serializable> {
         entityManager.persist(entity);
     }
 
-    public void update(T entity) {
-        entityManager.merge(entity);
-    }
+    public void update(T entity){
+        entityManager.merge(entity);}
 
     public void delete(PK id) {
         T entity = findById(id);

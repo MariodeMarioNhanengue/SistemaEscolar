@@ -1,5 +1,10 @@
 package com.mario.se.dao;
 
-public class EstudanteDaoimpl {
+import org.springframework.stereotype.Repository;
+
+import com.mario.se.model.Estudante;
+
+@Repository
+public class EstudanteDaoimpl extends AbstractDao<Estudante, Long> implements EstudanteDao {
 
 }
